@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .forms import Ingresar_ramo
 ramos=[]
 
-def get_name(request):
+def test(request):
     if request.method == 'POST':
         form = Ingresar_ramo(request.POST)
         if form.is_valid():
