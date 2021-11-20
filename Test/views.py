@@ -1,6 +1,14 @@
 from django.shortcuts import render
-from django.http.response import HttpResponse
+from .forms import Ingresar_ramo
+ramos=[]
 
-# Create your views here.
-def test(request):
-    return HttpResponse('')
+def get_name(request):
+    if request.method == 'POST':
+        form = Ingresar_ramo(request.POST)
+        if form.is_valid():
+            ramo = form.cleaned_data["ramo"]
+            ramos.append(ramo)
+        else:
+            form = Ingresar_ramo()
+        context = {'form':form}
+        return render(request,"Test/ramo.html",context)
