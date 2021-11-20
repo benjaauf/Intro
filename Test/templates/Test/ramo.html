@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Agrega tus ramos</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button>Ingresar</button>
+</form>
+
+<ul>
+    {% for ramo in ramos %}
+    <li>{{ramo}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
