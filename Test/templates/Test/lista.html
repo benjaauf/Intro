@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Ramos agregados</h1>
+<ul>
+    {% for ramo in ramos %}
+    <li>{{ramo}}               <button class="btn btn-danger">X</button></li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'test' %}">Voler</a>
+<a href="">Terminado</a>
+
+{% endblock %}
