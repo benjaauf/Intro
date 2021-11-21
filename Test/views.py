@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .forms import Ingresar_ramo
 ramos=[]
 
@@ -8,7 +8,8 @@ def test(request):
         if form.is_valid():
             ramo = form.cleaned_data["ramo"]
             ramos.append(ramo)
-        else:
-            form = Ingresar_ramo()
-        context = {'form':form}
-        return render(request,"Test/ramo.html",context)
+            return redirect('test')
+    else:
+        form = Ingresar_ramo()
+    context = {'form':form,'ramos':ramos}
+    return render(request,"Test/ramo.html",context)
