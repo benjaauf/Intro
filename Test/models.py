@@ -1,20 +1,20 @@
 from django.db import models
 
+DISP=[
+    ('ocupado', 'Ocuapado'),
+    ('libre','Libre'),
+]
 # Create your models here.
 
-class Ocupado(models.Model):
-    DISP = [
-        ('L','Libre'),
-        ('O', 'Ocupado')
-    ]
-    day = models.CharField(max_length=15)
-    b12 = models.CharField(max_length=6, choices=DISP)
-    b34 = models.CharField(max_length=6, choices=DISP)
-    b56 = models.CharField(max_length=6, choices=DISP)
-    b78 = models.CharField(max_length=6, choices=DISP)
-    b910 = models.BooleanField(max_length=6, choices=DISP)
-    b1112= models.CharField(max_length=6, choices=DISP)
-    b1314 = models.CharField(max_length=6, choices=DISP)
-    b1516 = models.CharField(max_length=6, choices=DISP)
-    b1718 = models.CharField(max_length=6, choices=DISP)
-    b1920 = models.CharField(max_length=6, choices=DISP)
+class Horario(models.Model):
+    day = models.CharField(max_length=20)
+    b1 = models.CharField(max_length=20, choices=DISP, default='libre')
+    b2 = models.CharField(max_length=20, choices=DISP, default='libre')
+    b3 = models.CharField(max_length=20, choices=DISP, default='libre')
+    b4 = models.CharField(max_length=20, choices=DISP, default='libre')
+    b5 = models.CharField(max_length=20, choices=DISP, default='libre')
+    b6 = models.CharField(max_length=20, choices=DISP, default='libre')
+    b7 = models.CharField(max_length=20, choices=DISP, default='libre')
+    b8 = models.CharField(max_length=20, choices=DISP, default='libre')
+    b9 = models.CharField(max_length=20, choices=DISP, default='libre')
+    b10 = models.CharField(max_length=20, choices=DISP, default='libre')
