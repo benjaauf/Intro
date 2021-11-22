@@ -1,13 +1,5 @@
-'''
 from django import forms
-from django.forms import fields
-from .models import Horario
-
-class Ingresar_ramo(forms.Form):
-    ramo = forms.CharField(max_length=40)
-'''
-from django import forms
-from .models import Ramo
+from .models import Ramo, Horario
 
 class Ingresar_ramo(forms.ModelForm):
     class Meta:
