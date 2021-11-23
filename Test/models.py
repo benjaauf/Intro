@@ -1,6 +1,11 @@
 from django.db import models
 
-DISP=[
+
+class Ramo(models.Model):
+    name = models.CharField(max_length=40)
+
+    def __str__(self):
+        return self.name
     ('ocupado', 'Ocuapado'),
     ('libre','Libre'),
 ]

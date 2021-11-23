@@ -2,9 +2,9 @@
 {% block content %}
 
 <h1>Agrega tus ramos</h1>
-<form method="post">
+<form method="post" class="post-form">
     {% csrf_token %}
-    {{ form }}
+    {{ form.as_p }}
     <button>Ingresar</button>
 </form>
 
@@ -13,5 +13,7 @@
     <li>{{ramo}}</li>
     {% endfor %}
 </ul>
+
+<a href="{% url 'editar' %}">Editar lista/Terminar</a>
 
 {% endblock %}
