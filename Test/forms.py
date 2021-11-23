@@ -1,20 +1,26 @@
-
 from django import forms
+from .models import Ramo, Horario
 from django.forms import fields
 from .models import Horario
 
-class Ingresar_ramo(forms.Form):
-    ramo = forms.CharField(max_length=40)
+class Ingresar_ramo(forms.ModelForm):
+    class Meta:
+        model = Ramo
+        fields = ['ramo']
 
-from django import forms
-from .models import Ramo
+
 
 class LunesForm(forms.ModelForm):
     class Meta:
         model = Horario
         exclude = ['day']
+
 class MartesForm(forms.ModelForm):
     class Meta:
+        model = Ramo
+        fields = ['ramo']
+        
+class HorarioForm(forms.ModelForm):
         model = Horario
         exclude = ['day']
 class MiercolesForm(forms.ModelForm):
