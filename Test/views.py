@@ -2,15 +2,10 @@ from django.forms.formsets import formset_factory
 from django.shortcuts import redirect, render
 from .forms import *
 from .models import *
-ramos=[]
 
 def lista(request):
     ramo = Ramo.objects.all().order_by('id')
     context = {'ramos':ramo}
-    if request.method == 'POST':
-        borrado = Ramo.objects.all()
-        ramos.remove(borrado)
-        borrado.delete()
     return render(request,"Test/lista.html",context)
 
 def delete(request,ramo_id):
