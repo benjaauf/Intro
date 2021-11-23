@@ -1,25 +1,33 @@
 from django.shortcuts import redirect, render
-from .forms import Ingresar_ramo
-from .models import Ramo
 from .forms import *
 from .models import *
 ramos=[]
 
-def editar(request):
-    context={'ramos':ramos}
+def lista(request):
+    ramo = Ramo.objects.all().order_by('id')
+    context = {'ramos':ramo}
+    if request.method == 'POST':
+        borrado = Ramo.objects.all()
+        ramos.remove(borrado)
+        borrado.delete()
     return render(request,"Test/lista.html",context)
 
+def delete(request,ramo_id):
+    Ramo.objects.get(id=ramo_id).delete()
+    return redirect('lista')
+
 def test(request):
+    materias = Ramo.objects.all().order_by('id')
     if request.method == 'POST':
         form = Ingresar_ramo(request.POST)
         if form.is_valid():
-            ramo = form.save()
-            ramos.append(ramo)
+            form.save()
             return redirect('test')
     else:
         form = Ingresar_ramo()
-    context = {'form':form, 'ramos': ramos}
+    context = {'form':form, 'ramos': materias}
     return render(request,"Test/ramo.html",context)
+    
 
 def horario(request):
     if request.method == 'POST':
