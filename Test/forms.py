@@ -4,7 +4,8 @@ from .models import Ramo, Horario
 class Ingresar_ramo(forms.ModelForm):
     class Meta:
         model = Ramo
-        fields = ['name']
+        fields = ['ramo']
+        
 class HorarioForm(forms.ModelForm):
     class Meta:
         model = Horario
