@@ -5,5 +5,6 @@ urlpatterns = [
     path('', views.test, name='test'),
     path('lista/',views.lista,name='lista'),
     path('delete/<int:ramo_id>/',views.delete,name='delete'),
+    path('edit/',views.editar,name='editar'),
     path('horario/', views.horario, name='horario'),
 ]
