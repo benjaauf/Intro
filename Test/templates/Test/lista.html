@@ -2,13 +2,14 @@
 {% block content %}
 
 <h1>Ramos agregados</h1>
+<br>
 <ul>
     {% for ramo in ramos %}
-    <li>{{ramo}}               <button class="btn btn-danger">X</button></li>
+    <li>{{ramo}}               <a class="btn btn-danger" href="{% url 'delete' ramo.id %}">X</a></li>
     {% endfor %}
 </ul>
 
 <a href="{% url 'test' %}">Voler</a>
-<a href="">Terminado</a>
+<a href="{% url 'horario' %}">Continuar</a>
 
 {% endblock %}
