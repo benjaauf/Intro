@@ -6,6 +6,7 @@ class Ramo(models.Model):
 
     def __str__(self):
         return self.name
+DISP=[
     ('ocupado', 'Ocuapado'),
     ('libre','Libre'),
 ]
