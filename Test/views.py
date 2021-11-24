@@ -20,6 +20,14 @@ def test(request):
     context = {'form':form, 'ramos': materias}
     return render(request,"Test/ramo.html",context)
     
+def descanso(request):
+    if request.method == 'POST':
+        form = DescansoForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = DescansoForm()
+    return render(request,"Test/descanso.html")
 
 def horario(request):
     if request.method == 'POST':

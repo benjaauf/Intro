@@ -1,10 +1,21 @@
 from django import forms
-from .models import Ramo, Horario
+from django.forms.widgets import TextInput
+from .models import Descanso, Ramo, Horario
+from django.forms import fields
+from .models import Horario
 
 class Ingresar_ramo(forms.ModelForm):
     class Meta:
         model = Ramo
         fields = ['ramo']
+
+
+class DescansoForm(forms.ModelForm):
+    class Meta:
+        model = Descanso
+        fields = ['hora']
+        #widgets = {'hora' = TextInput(attrs={'class':'durationInputWidget'})}
+
 
 class LunesForm(forms.ModelForm):
     class Meta:
