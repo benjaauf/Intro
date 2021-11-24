@@ -2,16 +2,18 @@
 {% block content %}
 
 <h1>Agrega tus ramos</h1>
-<form method="post">
+<form method="post" class="post-form">
     {% csrf_token %}
-    {{ form }}
+    {{ form.as_p }}
     <button>Ingresar</button>
 </form>
 
 <ul>
     {% for ramo in ramos %}
-    <li>{{ramo}}</li>
+    <li>{{ramo}}               <a class="btn btn-danger" href="{% url 'delete' ramo.id %}">X</a></li>
     {% endfor %}
 </ul>
+
+<a href="{% url 'horario' %}">Continuar</a>
 
 {% endblock %}
