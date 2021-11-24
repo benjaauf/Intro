@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .forms import Test2
 
-def Test2(request):
-	return HttpResponse('Crea tu tier list de las materias más difíciles')
+
+def test2(request):
+	f = Test2()
+	return render(request,'test2.html',{'form': f})
