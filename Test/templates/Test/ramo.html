@@ -10,10 +10,10 @@
 
 <ul>
     {% for ramo in ramos %}
-    <li>{{ramo}}</li>
+    <li>{{ramo}}               <a class="btn btn-danger" href="{% url 'delete' ramo.id %}">X</a></li>
     {% endfor %}
 </ul>
 
-<a href="{% url 'lista' %}">Ver lista/Terminar</a>
+<a href="{% url 'horario' %}">Continuar</a>
 
 {% endblock %}

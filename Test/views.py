@@ -3,14 +3,10 @@ from django.shortcuts import redirect, render
 from .forms import *
 from .models import *
 
-def lista(request):
-    ramo = Ramo.objects.all().order_by('id')
-    context = {'ramos':ramo}
-    return render(request,"Test/lista.html",context)
 
 def delete(request,ramo_id):
     Ramo.objects.get(id=ramo_id).delete()
-    return redirect('lista')
+    return redirect('test')
 
 def test(request):
     materias = Ramo.objects.all().order_by('id')
