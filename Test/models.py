@@ -31,3 +31,9 @@ class Horario(models.Model):
 
 class Descanso(models.Model):
     hora = models.DurationField()
+
+    def __str__(self):
+        return self.day
+
+
+
