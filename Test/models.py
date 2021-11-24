@@ -25,3 +25,6 @@ class Horario(models.Model):
     b8 = models.CharField(max_length=20, choices=DISP, default='libre')
     b9 = models.CharField(max_length=20, choices=DISP, default='libre')
     b10 = models.CharField(max_length=20, choices=DISP, default='libre')
+
+    def __str__(self):
+        return self.day
