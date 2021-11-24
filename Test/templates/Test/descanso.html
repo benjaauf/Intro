@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{% block content %}
+
+<h1>Entre qué horas quieres dormir?</h1>
+<form method="post" class="post-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Ingresar</button>
+</form>
+
+
+{% endblock %}
