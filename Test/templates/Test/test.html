@@ -1,6 +1,33 @@
-% extends 'base.html' %
+{% extends 'base.html' %}
 
 {% block content%}
+
+<h1>Bienvenido al primer Test</h1>
+<h2>Agrega tus ramos</h2>
+<form method="post" class="post-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Ingresar</button>
+
+<ul>
+    {% for ramo in ramos %}
+    <li>{{ramo}}               <a href="{% url 'delete' ramo.id %}">X</a></li>
+    {% endfor %}
+</ul>
+
+</form>
+<form method="post"> {% csrf_token %}
+<h2>En que horario estas libre</h2>
+<p>Selecciona en que bloques estas ocupado. Cada bloque dura 1 hora y 10 mins. y parten desde las 8:15 AM</p>
+        <p><strong style="font-size:150%">Lunes: </strong> {{Lunes}}</p>
+        <p><strong style="font-size:150%">Martes: </strong> {{Martes}}</p>
+        <p><strong style="font-size:150%">Miercoles: </strong> {{Miercoles}}</p>
+        <p><strong style="font-size:150%">Jueves: </strong> {{Jueves}} </p>
+        <p><strong style="font-size:150%">Viernes: </strong> {{Viernes}} </p>
+        <p><strong style="font-size:150%">Sabado: </strong>  {{Sabado}}</p>
+        <p><strong style="font-size:150%">Domingo: </strong> {{Domingo}}</p>
+    <button type="submit" >Enviar</button>
+</form>
 
 
 
