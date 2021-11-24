@@ -2,6 +2,7 @@
 {% block content %}
 
 <h1>En que horario estas libre</h1>
+<p>Selecciona en que bloques estas ocupado. Cada bloque dura 1 hora y 10 mins. y parten desde las 8:15 AM</p>
 <form method="post" >{% csrf_token %} 
         <p><strong style="font-size:150%">Lunes: </strong> {{Lunes}}</p>
         <p><strong style="font-size:150%">Martes: </strong> {{Martes}}</p>
