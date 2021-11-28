@@ -2,8 +2,20 @@
 {% block content %}
 
 
- <h1> Esto es una prueba </h1>
- <p>Sesion de {{user}}</p>
+<h1> Inicio </h1>
+<p>Bienvenido {{user}}</p>
+<p>Ramos inscritos:</p>
+<ul>
+    {% for ramo in ramos%}
+    <li>{{ramo.ramo}}</li>
+    {% endfor %}
+</ul>
+<p>Horario:</p>
+<ul>
+    {% for dia in horario%}
+    <li>{{dia.day}}: B1: {{dia.b1}} B2: {{dia.b2}} B3: {{dia.b3}} B4: {{dia.b4}} B5: {{dia.b5}} B6: {{dia.b6}} B7: {{dia.b7}} B8: {{dia.b8}} B9: {{dia.b9}} B10: {{dia.b10}}</li>
+    {% endfor%}
+</ul>
 <p><a href="{% url 'test' %}">Iniciar Test 1</a></p>
 <p><a href="{% url 'login' %}">Cambiar usuario</a></p>
 <p><a href="{% url 'logout' %}">Salir</a></p>

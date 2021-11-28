@@ -1,12 +1,15 @@
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
-from django.contrib import  messages
+from django.contrib.auth import  authenticate,login
 from .forms import UserRegisterForm
+from Test.models import *
 # Create your views here.
 
 def home(request):
    user = request.user
-   context = {'user':user}
+   ramos = Ramo.objects.all().filter(user=user).order_by('id')
+   horario = Horario.objects.all().filter(user=user)
+   context = {'user':user,'ramos':ramos,'horario':horario}
    return render(request, 'perfiles/home.html',context)
 
 def logout(request):
@@ -17,9 +20,11 @@ def register(request):
       form = UserRegisterForm(request.POST)
       if form.is_valid():
          form.save()
-         # username = form.cleaned_data['username']
-         # messages.success(request, f'Usuario {username} creado')
-         return redirect('inicio')
+         username = request.POST['username']
+         password = request.POST['password1']
+         user = authenticate(request,username=username, password =password)
+         login(request,user)
+         return redirect('test')
    else:
       form = UserRegisterForm()
    context = {'form':form}
