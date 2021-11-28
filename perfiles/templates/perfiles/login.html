@@ -1,0 +1,12 @@
+{% extends 'perfiles/base.html' %}
+
+{% block content %}
+<h1 style="text-align:center">Ingrese sus datos</h1>
+<form class="form" method="post" style="text-align:center">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" >Ingresar</button>
+
+</form>
+
+{% endblock %}
