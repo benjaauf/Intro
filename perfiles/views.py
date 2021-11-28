@@ -5,7 +5,9 @@ from .forms import UserRegisterForm
 # Create your views here.
 
 def home(request):
-   return render(request, 'perfiles/home.html')
+   user = request.user
+   context = {'user':user}
+   return render(request, 'perfiles/home.html',context)
 
 def logout(request):
    return redirect('inicio')

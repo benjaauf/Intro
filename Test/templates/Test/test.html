@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'Test/base.html' %}
 
 {% block content%}
 
@@ -16,7 +16,8 @@
 </ul>
 
 </form>
-<form method="post"> {% csrf_token %}
+<form method="post"> 
+{% csrf_token %}
 <h2>En que horario estas libre</h2>
 <p>Selecciona en que bloques estas ocupado. Cada bloque dura 1 hora y 10 mins. y parten desde las 8:15 AM</p>
         <p><strong style="font-size:150%">Lunes: </strong> {{Lunes}}</p>

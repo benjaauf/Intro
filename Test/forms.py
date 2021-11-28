@@ -1,8 +1,8 @@
 from django import forms
 from django.forms.widgets import TextInput
-from .models import Descanso, Ramo, Horario
-from django.forms import fields
-from .models import Horario
+from .models import *
+
+
 
 class Ingresar_ramo(forms.ModelForm):
     class Meta:
@@ -20,41 +20,41 @@ class DescansoForm(forms.ModelForm):
 class LunesForm(forms.ModelForm):
     class Meta:
         model = Horario
-        exclude = ['day']
+        exclude = ['day','user']
     prefix = 'Lunes'
 
 class MartesForm(forms.ModelForm):
     class Meta:
         model = Horario
-        exclude = ['day']
+        exclude = ['day','user']
     prefix = 'Martes'
 
 class MiercolesForm(forms.ModelForm):
     class Meta:
         model = Horario
-        exclude = ['day']
+        exclude = ['day','user']
     prefix = 'Miercoles'
 
 class JuevesForm(forms.ModelForm):
     class Meta:
         model = Horario
-        exclude = ['day']
+        exclude = ['day','user']
     prefix = 'Jueves'
 
 class ViernesForm(forms.ModelForm):
     class Meta:
         model = Horario
-        exclude = ['day']
+        exclude = ['day','user']
     prefix = 'Viernes'
 
 class SabadoForm(forms.ModelForm):
     class Meta:
         model = Horario
-        exclude = ['day']
+        exclude = ['day','user']
     prefix = 'Sabado'
 
 class DomingoForm(forms.ModelForm):
     class Meta:
         model = Horario
-        exclude = ['day']
+        exclude = ['day','user']
     prefix = 'Domingo'

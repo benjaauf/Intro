@@ -3,6 +3,8 @@
 
 
  <h1> Esto es una prueba </h1>
-<a href="{% url 'logout' %}">Salir</a>
-
+ <p>Sesion de {{user}}</p>
+<p><a href="{% url 'test' %}">Iniciar Test 1</a></p>
+<p><a href="{% url 'login' %}">Cambiar usuario</a></p>
+<p><a href="{% url 'logout' %}">Salir</a></p>
 {% endblock %}
