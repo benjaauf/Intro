@@ -1,0 +1,18 @@
+h3{
+    text-align: center;
+}
+.eye{
+    text-align: center;
+    position: absolute;
+    height:500px;
+    width:500px;
+    z-index: 1;
+  }
+
+.heaven{
+    text-align: center;
+    position:absolute;
+    height:500px;
+    width:500px;
+    z-index: -1;
+  }
