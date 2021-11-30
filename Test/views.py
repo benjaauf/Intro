@@ -41,7 +41,7 @@ def test(request):
             viernes.save() 
             sabado.save() 
             domingo.save() 
-            return redirect('home')
+            return redirect('/test2')
     else:
         form = Ingresar_ramo()
         lunes = LunesForm()
@@ -53,6 +53,8 @@ def test(request):
         domingo = DomingoForm()
     context = {'form':form, 'ramos': ramos,'Lunes':lunes,'Martes':martes,'Miercoles':miercoles,'Jueves':jueves,'Viernes':viernes,'Sabado': sabado,'Domingo':domingo,'user':user}
     return render(request,"Test/test.html",context)
+
+# Cambio del test 1 
 
 def updatet1(request):
     user = request.user
@@ -75,7 +77,7 @@ def updatet1(request):
         domingo = DomingoForm(request.POST,instance= dom)
         if form.is_valid():
             form.save()
-            return redirect('test')
+            return redirect('updatet1')
         if lunes.is_valid() and martes.is_valid() and miercoles.is_valid() and jueves.is_valid() and viernes.is_valid() and sabado.is_valid() and domingo.is_valid():
             lunes.save()
             martes.save() 
@@ -95,4 +97,8 @@ def updatet1(request):
         sabado = SabadoForm(instance=sab)
         domingo = DomingoForm(instance=dom)
     context = {'form':form, 'ramos': ramos,'Lunes':lunes,'Martes':martes,'Miercoles':miercoles,'Jueves':jueves,'Viernes':viernes,'Sabado': sabado,'Domingo':domingo,'user':user}
-    return render(request,"Test/test.html",context)
+    return render(request,"Test/updatet1.html",context)
+
+def deletet1(request,ramo_id):
+    Ramo.objects.get(id=ramo_id).delete()
+    return redirect('updatet1')

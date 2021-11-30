@@ -1,0 +1,15 @@
+{% extends 'Test2/base.html' %}
+
+{% block content %}
+<h1>Test 2</h1>
+<p>Asignale una dificultad al ramo</p>
+<form method="post">
+    {% csrf_token %}
+    {% for form in forms %}
+    <p>{{form.prefix}} {{form}}   </p>
+    {% endfor %}
+<button  type="submit"> Enviar </button>
+</form>
+
+
+{% endblock %}

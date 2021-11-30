@@ -13,7 +13,7 @@ def home(request):
    return render(request, 'perfiles/home.html',context)
 
 def logout(request):
-   return redirect('inicio')
+   return render(request,'logout.html',context={'user':request.user})
 
 def register(request):
    if request.method == 'POST':

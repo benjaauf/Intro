@@ -3,11 +3,10 @@
 
 
 <h1> Inicio </h1>
-<p>Bienvenido {{user}}</p>
 <p>Ramos inscritos:</p>
 <ul>
     {% for ramo in ramos%}
-    <li>{{ramo.ramo}}</li>
+    <li>{{ramo.ramo}} Dificultad: {{ramo.dificultad}}</li>
     {% endfor %}
 </ul>
 <p>Horario:</p>
@@ -17,6 +16,7 @@
     {% endfor%}
 </ul>
 <p><a href="{% url 'updatet1' %}">Cambiar Test 1</a></p>
+<p><a href="{% url 'Test2' %}">Hacer Test 2</a></p>
 <p><a href="{% url 'login' %}">Cambiar usuario</a></p>
 <p><a href="{% url 'logout' %}">Salir</a></p>
 {% endblock %}
