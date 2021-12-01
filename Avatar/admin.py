@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import *
 
 # Register your models here.
-admin.site.register(accesorios)
-admin.site.register(caras)
-admin.site.register(vestuario)
-admin.site.register(polis)
+admin.site.register(Accesorios)
+admin.site.register(Caras)
+admin.site.register(Vestuario)
