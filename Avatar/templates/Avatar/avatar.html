@@ -12,7 +12,11 @@
     
     <h1>Editar avatar</h1>
     <img src="{% static 'imagenes/avatar.png' %}" alt="avatar"class="heaven"/> 
-    <img src="{% static 'imagenes/afro.png' %}" alt="afro"class="eye"/>
+    {% for accesorio in accesorios %}
+    <img src=" {{ accesorios.imagen.url }} " class="eye"/>
+    <img src="{{caras.imagen.url}}" class="eye"/>
+    <img src="{{vestuario.imagen.url}}" class="eye"/>
+    {%endfor%}
     <br>
     <br>
     <h3><button><</button> Accesorios <button>></button></h3>
