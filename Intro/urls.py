@@ -21,4 +21,5 @@ urlpatterns = [
     path('',include('perfiles.urls')),
     path('test/', include('Test.urls')),
     path('test2/', include('Test2.urls')),
+
 ]

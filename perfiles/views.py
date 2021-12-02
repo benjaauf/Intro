@@ -3,6 +3,10 @@ from django.shortcuts import redirect, render
 from django.contrib.auth import  authenticate,login
 from .forms import UserRegisterForm
 from Test.models import *
+from .calendario import crear_calendario
+
+
+
 # Create your views here.
 
 def home(request):
@@ -24,6 +28,7 @@ def register(request):
          password = request.POST['password1']
          user = authenticate(request,username=username, password =password)
          login(request,user)
+         calendario = crear_calendario()
          return redirect('test')
    else:
       form = UserRegisterForm()
