@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    
+    <h1>Editar avatar</h1>
+    <img src="{% static 'imagenes/avatar.png' %}" alt="avatar"class="heaven"/> 
+    {% for accesorio in accesorios %}
+    <img src=" {{ accesorios.imagen.url }} " class="eye"/>
+    <img src="{{caras.imagen.url}}" class="eye"/>
+    <img src="{{vestuario.imagen.url}}" class="eye"/>
+    {%endfor%}
+    <br>
+    <br>
+    <h3><button><</button> Accesorios <button>></button></h3>
+    <br>
+    <h3><button><</button> Caras <button>></button></h3>
+    <br>
+    <h3><button><</button> Vestuarios <button>></button></h3>
+    
+
+</body>
+</html>
