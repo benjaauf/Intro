@@ -13,7 +13,7 @@ class Accesorios(models.Model):
 
 class Caras(models.Model):
     name = models.CharField(max_length=15)
-    avatar = models.ImageField(upload_to="caras")
+    imagen = models.ImageField(upload_to="caras")
 
     def __str__(self):
         return self.name
@@ -21,7 +21,7 @@ class Caras(models.Model):
 
 class Vestuario(models.Model):
     name = models.CharField(max_length=15)
-    avatar = models.ImageField(upload_to="vestuario")
+    imagen = models.ImageField(upload_to="vestuario")
 
     def __str__(self):
         return self.name
