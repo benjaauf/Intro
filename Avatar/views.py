@@ -6,7 +6,7 @@ concar = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 conver = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 
 def deracc(request):
-    accesorio = contador.objects.get(name='accesor')
+    accesorio = contador.objects.get(name='acceso')
     accesorio.valor = accesorio.valor +1
     accesorio.save()
     return redirect('avatar')
@@ -24,7 +24,7 @@ def derves(request):
     return redirect('avatar')
 
 def izqacc(request):
-    accesorio = contador.objects.get(name='accesor')
+    accesorio = contador.objects.get(name='acceso')
     accesorio.valor = accesorio.valor -1
     accesorio.save()
     return redirect('avatar')
@@ -42,17 +42,9 @@ def izqves(request):
     return redirect('avatar')
 
 def avatar(request):
-    ac = conacc[contador.objects.get(name='accesor').valor]
+    ac = conacc[contador.objects.get(name='acceso').valor]
     ca = concar[contador.objects.get(name='careta').valor]
     ve = conver[contador.objects.get(name='vesto').valor]
-
-    if contador.objects.get(name='accesor').valor >= 18:
-        contador.objects.get(name='accesor').valor = 0
-        contador.objects.get(name='accesor').save()
-
-
-
-
 
 
 

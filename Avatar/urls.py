@@ -6,12 +6,12 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('',views.avatar,name='avatar'),
-    path('/deracc',views.deracc,name='deracc'),
-    path('/dercar',views.dercar,name='dercar'),
-    path('/derves',views.derves,name='derves'),
-    path('/izqacc',views.izqacc,name='izqacc'),
-    path('/izqcar',views.izqcar,name='izqcar'),
-    path('/izqves',views.izqves,name='izqves'),
+    path('deracc/',views.deracc,name='deracc'),
+    path('dercar/',views.dercar,name='dercar'),
+    path('derves/',views.derves,name='derves'),
+    path('izqacc/',views.izqacc,name='izqacc'),
+    path('izqcar/',views.izqcar,name='izqcar'),
+    path('izqves/',views.izqves,name='izqves'),
 ] 
 
 if settings.DEBUG:
