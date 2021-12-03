@@ -12,18 +12,22 @@
     
     <h1>Editar avatar</h1>
     <img src="{% static 'imagenes/avatar.png' %}" alt="avatar"class="heaven"/> 
-    {% for accesorio in accesorios %}
-    <img src=" {{ Accesorios.imagen.url }} " class="eye"/>
-    <img src="{{Caras.imagen.url}}" class="eye"/>
-    <img src="{{Vestuario.imagen.url}}" class="eye"/>
-    {%endfor%}
+    <td>
+        <img src=" {{ accesorios.imagen.url }} " class="eye"/>
+    </td>
+    <td>
+        <img src="{{caras.imagen.url}}" class="eye"/>
+    </td>
+    <td>
+        <img src="{{vestuario.imagen.url}}" class="eye"/>
+    </td>
     <br>
     <br>
-    <h3><button><</button> Accesorios <button>></button></h3>
+    <h3><a href="{% url 'izqacc' %}"><</a> Accesorios <a href="{% url 'deracc' %}">></a></h3>
     <br>
-    <h3><button><</button> Caras <button>></button></h3>
+    <h3><a href="{% url 'izqcar' %}"><</a> Caras <a href="{% url 'dercar' %}">></a></h3>
     <br>
-    <h3><button><</button> Vestuarios <button>></button></h3>
+    <h3><a href="{% url 'izqves' %}"><</a> Vestuarios <a href="{% url 'derves' %}">></a></h3>
     
 
 </body>

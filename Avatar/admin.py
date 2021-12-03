@@ -5,3 +5,4 @@ from .models import *
 admin.site.register(Accesorios)
 admin.site.register(Caras)
 admin.site.register(Vestuario)
+admin.site.register(contador)
