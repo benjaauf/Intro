@@ -64,9 +64,6 @@ def avatar(request):
     ca = concar[contador.objects.get(name='careta').valor]
     ve = conver[contador.objects.get(name='vesto').valor]
 
-
-
-
     accesorios = Accesorios.objects.get(id=ac)
     caras = Caras.objects.get(id=ca)
     vestuario = Vestuario.objects.get(id=ve)
