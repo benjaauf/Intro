@@ -2,7 +2,146 @@
 {% load static %}
 {% block content %}
 
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#page-top">Inicio</a>
+        <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Ramos</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#horario">Horario</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#opciones">Opciones</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Masthead-->
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <img src="{% static 'imagenes/avatar.png' %}" alt="avatar"class="masthead-avatar mb-5"/> 
+        <img src=" {{ accesorios.imagen.url }} " class="masthead-avatar mb-5"/>
+        <img src="{{caras.imagen.url}}" class="masthead-avatar mb-5"/>
+        <img src="{{vestuario.imagen.url}}" class="masthead-avatar mb-5"/>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <a class="btn btn-xl btn-outline-light" href="{% url 'avatar' %}">Personalizar avatar</a>
+    </div>
+</header>
+<!-- Portfolio Section-->
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
+        <!-- Portfolio Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Ramos inscritos</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Grid Items-->
+        <div class="row justify-content-center">
+            {% for ramo in ramos%}
+            <li>
+                {{ramo.ramo}}  <br>
+                Dificultad: {{ramo.dificultad}}
+            </li>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="page-section portfolio" id="horario">
+    <div class="container">
+        <!-- Portfolio Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Horario</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Grid Items-->
+        <div class="row justify-content-center">
+            {% for dia in horario%}
+                <div class="col-md-6 col-lg-4 mb-5">
+                    {{dia.day}}: <br>
+                    <strong>8:15-9:25</strong>: {{dia.b1}} <br>
+                    <strong>9:35-10:45</strong> : {{dia.b2}} <br>
+                    <strong> 10:55-12:05 </strong>: {{dia.b3}} <br>
+                    <strong>12:15-13:25</strong> : {{dia.b4}} <br>
+                    <strong> 14:30-15:40</strong>: {{dia.b5}} <br>
+                    <strong>15:50-17:00</strong> : {{dia.b6}} <br>
+                    <strong>17:10-18:20</strong> : {{dia.b7}} <br>
+                    <strong> 18:30-19:40</strong>: {{dia.b8}} <br>
+                    <strong> 19:50-21:00</strong>: {{dia.b9}} <br>
+                    <strong> 21:10-22:20</strong>: {{dia.b10}} <br>
+                </div>
+            {% endfor%}
+        </div>
+    </div>
+</section>
 
+
+
+
+<section class="page-section bg-primary text-white mb-0" id="opciones">
+    <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white">Opciones</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <div class="row">
+            <div ><p class="lead"> <a class="btn btn-xl btn-outline-light" href="{% url 'updatet1' %}"> Cambiar Test 1</a></p></div>
+            <div ><p class="lead"> <a class="btn btn-xl btn-outline-light" href="{% url 'Test2' %}"> Hacer Test 2</a></p></div>
+        </div>
+        <!-- About Section Button-->
+        <div class="text-center mt-4">
+            <a class="btn btn-xl btn-outline-light" href="{% url 'login' %}">Cambiar usuario</a>
+            <a class="btn btn-xl btn-outline-light" href="{% url 'logout' %}">Salir</a>
+        </div>
+    </div>
+</section>
+
+
+
+
+<footer class="footer text-center">
+    <div class="container">
+        <div class="row">
+            <!-- Footer Location-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4"></h4>
+            </div>
+            <!-- Footer Social Icons-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">Bienvenido,    @{{user}}</h4>
+                <h4><img src=" {% static 'imagenes/logo task.png' %} " class="img-fluid"/></h4>
+            </div>
+            <!-- Footer About Text-->
+            <div class="col-lg-4">
+                <h4 class="text-uppercase mb-4"></h4>
+                <p class="lead mb-0">
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--
 <h1> Inicio </h1>
 <p>Ramos inscritos:</p>
 <ul>
@@ -32,5 +171,5 @@
 <td>
     <img src="{{vestuario.imagen.url}}" class="eye"/>
 </td>
-
+-->
 {% endblock %}

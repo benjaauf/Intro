@@ -6,30 +6,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avatar</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    
-    <h1>Editar avatar</h1>
-    <img src="{% static 'imagenes/avatar.png' %}" alt="avatar"class="heaven"/> 
-    <td>
-        <img src=" {{ accesorios.imagen.url }} " class="eye"/>
-    </td>
-    <td>
-        <img src="{{caras.imagen.url}}" class="eye"/>
-    </td>
-    <td>
-        <img src="{{vestuario.imagen.url}}" class="eye"/>
-    </td>
-    <br>
-    <br>
-    <h3><a href="{% url 'izqacc' %}"><</a> Accesorio <a href="{% url 'deracc' %}">></a></h3>
-    <br>
-    <h3><a href="{% url 'izqcar' %}"><</a> Cara <a href="{% url 'dercar' %}">></a></h3>
-    <br>
-    <h3><a href="{% url 'izqves' %}"><</a> Ropa <a href="{% url 'derves' %}">></a></h3>
-    <br>
-    <h3><a href="{% url 'home' %}">Volver</a></h3>
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Edición de personaje</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="btn btn-xl btn-outline-light" href="{% url 'home' %}">Regresar</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+
+    <section class="page-section bg-primary text-white mb-0" id="opciones">
+        <div class="container">
+            <!-- About Section Content-->
+            <br><br><br><br>
+            <div class="row">
+                <img src="{% static 'imagenes/avatar.png' %}" alt="avatar"class="eye"/> 
+                <img src=" {{ accesorios.imagen.url }} " class="eye"/>
+                <img src="{{caras.imagen.url}}" class="eye"/>
+                <img src="{{vestuario.imagen.url}}" class="eye"/>
+            </div>
+            <!-- About Section Button-->
+            <div>
+                 <div class="text-end mt-4">
+                     <br><br><br><br>
+                     <h3><a class="btn btn-outline-light btn-social mx-1" href="{% url 'izqacc' %}"><</a> Accesorio <a class="btn btn-outline-light btn-social mx-1" href="{% url 'deracc' %}">></a></h3>
+                     <br>
+                     <h3><a class="btn btn-outline-light btn-social mx-1" href="{% url 'izqcar' %}"><</a> Cara <a class="btn btn-outline-light btn-social mx-1" href="{% url 'dercar' %}">></a></h3>
+                     <br>
+                     <h3><a class="btn btn-outline-light btn-social mx-1" href="{% url 'izqves' %}"><</a> Ropa <a class="btn btn-outline-light btn-social mx-1" href="{% url 'derves' %}">></a></h3>
+                 </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4"></h4>
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Bienvenido,    @{{user}}</h4>
+                    <h4><img src=" {% static 'imagenes/logo task.png' %} " class="img-fluid"/></h4>
+                </div>
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4"></h4>
+                    <p class="lead mb-0">
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
