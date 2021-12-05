@@ -20,14 +20,14 @@
 <form method="post"> 
 {% csrf_token %}
 <h2>En que horario estas libre</h2>
-<p>Selecciona en que bloques estas ocupado. Cada bloque dura 1 hora y 10 mins. y parten desde las 8:15 AM</p>
-        <p><strong style="font-size:150%">Lunes: </strong> {{Lunes}}</p>
-        <p><strong style="font-size:150%">Martes: </strong> {{Martes}}</p>
-        <p><strong style="font-size:150%">Miercoles: </strong> {{Miercoles}}</p>
-        <p><strong style="font-size:150%">Jueves: </strong> {{Jueves}} </p>
-        <p><strong style="font-size:150%">Viernes: </strong> {{Viernes}} </p>
-        <p><strong style="font-size:150%">Sabado: </strong>  {{Sabado}}</p>
-        <p><strong style="font-size:150%">Domingo: </strong> {{Domingo}}</p>
+<p>Selecciona en que bloques estas ocupado y en cuales estudiaras.</p>
+        <p><strong style="font-size:150%">Lunes: </strong><strong> {{Lunes}}</strong></p>
+        <p><strong style="font-size:150%">Martes: </strong> <strong> {{Martes}}</strong></p>
+        <p><strong style="font-size:150%">Miercoles: </strong> <strong> {{Miercoles}}</strong></p>
+        <p><strong style="font-size:150%">Jueves: </strong> <strong> {{Jueves}}</strong> </p>
+        <p><strong style="font-size:150%">Viernes: </strong> <strong> {{Viernes}}</strong> </p>
+        <p><strong style="font-size:150%">Sabado: </strong>  <strong> {{Sabado}}</strong></p>
+        <p><strong style="font-size:150%">Domingo: </strong> <strong> {{Domingo}}</strong></p>
     <button type="submit" >Enviar</button>
 </form>
 

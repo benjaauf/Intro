@@ -1,0 +1,9 @@
+{% extends 'Test2/base.html'%}
+{% block content %}
+<h1> Cuando quieres estudiar</h1>
+<form method="post">
+    {%csrf_token%}
+    {{prueba}}
+    {{form}}
+</form>
+{% endblock %}

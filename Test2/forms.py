@@ -19,3 +19,12 @@ class Test2(forms.ModelForm):
     fields = ['dificultad']
 
   
+# class EstudioForm(forms.ModelForm):
+#   DISP = [
+#     ('Libre','Libre'),
+#     ('Estudiar','Estudiar')
+#   ]
+
+#   class Meta:
+#     model = Horario
+#     exclude = ['day', 'user']

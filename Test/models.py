@@ -22,19 +22,20 @@ class Horario(models.Model):
     DISP=[
     ('Ocupado', 'Ocuapado'),
     ('Libre','Libre'),
+    ('Estudiar','Estudiar')
     ]
     user=models.ForeignKey(User, on_delete=models.CASCADE, related_name='horario', null=True)
     day = models.CharField(max_length=20)
-    b1 = models.CharField(max_length=20, choices=DISP, default='Libre')
-    b2 = models.CharField(max_length=20, choices=DISP, default='Libre')
-    b3 = models.CharField(max_length=20, choices=DISP, default='Libre')
-    b4 = models.CharField(max_length=20, choices=DISP, default='Libre')
-    b5 = models.CharField(max_length=20, choices=DISP, default='Libre')
-    b6 = models.CharField(max_length=20, choices=DISP, default='Libre')
-    b7 = models.CharField(max_length=20, choices=DISP, default='Libre')
-    b8 = models.CharField(max_length=20, choices=DISP, default='Libre')
-    b9 = models.CharField(max_length=20, choices=DISP, default='Libre')
-    b10 = models.CharField(max_length=20, choices=DISP, default='Libre')
+    b1 = models.CharField(max_length=20, choices=DISP, default='Libre',verbose_name = '8:15-9:25')
+    b2 = models.CharField(max_length=20, choices=DISP, default='Libre',verbose_name = '9:35-10:45')
+    b3 = models.CharField(max_length=20, choices=DISP, default='Libre',verbose_name = '10:55-12:05')
+    b4 = models.CharField(max_length=20, choices=DISP, default='Libre',verbose_name = '12:15-13:25')
+    b5 = models.CharField(max_length=20, choices=DISP, default='Libre',verbose_name = '14:30-15:40')
+    b6 = models.CharField(max_length=20, choices=DISP, default='Libre',verbose_name = '15:50-17:00')
+    b7 = models.CharField(max_length=20, choices=DISP, default='Libre',verbose_name = '17:10-18:20')
+    b8 = models.CharField(max_length=20, choices=DISP, default='Libre',verbose_name = '18:30-19:40')
+    b9 = models.CharField(max_length=20, choices=DISP, default='Libre',verbose_name = '19:50-21:00')
+    b10 = models.CharField(max_length=20, choices=DISP, default='Libre',verbose_name = '21:10-22:20')
 
     def __str__(self):
         return f'Usuario: {self.user} Dia: {self.day}'

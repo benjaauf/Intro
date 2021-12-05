@@ -1,5 +1,6 @@
 from pprint import pprint
 from .Google import Create_Service
+from Test.models import *
 
 CLIENT_SECRET_FILE = 'perfiles/client_secret_602736779324-6l2qrovkouvotof8cjv6pdtd1rbgjhk2.apps.googleusercontent.com.json'
 API_NAME = 'calendar'
@@ -15,8 +16,11 @@ def crear_calendario():
     created_calendar = service.calendars().insert(body=calendar).execute()
     return created_calendar
 
-
-
+"""
+crear los eventos de estudio con el horario
+"""
+def crear_eventos(user):
+    pass
 
 
 
