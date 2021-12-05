@@ -25,3 +25,10 @@ class Vestuario(models.Model):
 
     def __str__(self):
         return self.name
+
+class contador(models.Model):
+    name = models.CharField(max_length=6)
+    valor = models.IntegerField()
+
+    def __str__(self):
+        return self.name
