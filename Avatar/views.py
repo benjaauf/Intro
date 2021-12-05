@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from .models import *
 
 conacc = [18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34]
-concar = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+concar = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
 conver = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 
 def deracc(request):
@@ -18,7 +18,7 @@ def dercar(request):
     cara = contador.objects.get(name='careta')
     cara.valor = cara.valor +1
     cara.save()
-    if cara.valor >= 14:
+    if cara.valor >= 17:
         cara.valor = 0
         cara.save()
     return redirect('avatar')
@@ -46,7 +46,7 @@ def izqcar(request):
     cara.valor = cara.valor -1
     cara.save()
     if cara.valor <= -1:
-        cara.valor = 13
+        cara.valor = 16
         cara.save()
     return redirect('avatar')
 
