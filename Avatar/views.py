@@ -60,13 +60,6 @@ def izqves(request):
     return redirect('avatar')
 
 def avatar(request):
-<<<<<<< HEAD
-    accesorios = Accesorios.objects.get(id=18).imagen
-    caras = Caras.objects.get(id=1).imagen
-    vestuario = Vestuario.objects.get(id=1).imagen
-    context = { 'accesorios':accesorios,'caras':caras, 'vestuario':vestuario}
-    return render(request,'Avatar/avatar.html',context)
-=======
     ac = conacc[contador.objects.get(name='acceso').valor]
     ca = concar[contador.objects.get(name='careta').valor]
     ve = conver[contador.objects.get(name='vesto').valor]
@@ -82,4 +75,3 @@ def avatar(request):
 
 
 
->>>>>>> a4f77d4af02a23e7e94a69310ee65ef1cfb4f596
