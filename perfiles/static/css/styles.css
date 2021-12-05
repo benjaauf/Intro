@@ -11542,8 +11542,9 @@ html {
   color: red;
 }
 
-.logoaaa {
+.logo {
+  text-align: center;
   align-items: center;
-  width: 10px;
-  height: 10px;
+  width: 200px;
+  height: 200px;
 }

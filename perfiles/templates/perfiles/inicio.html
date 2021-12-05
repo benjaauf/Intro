@@ -1,10 +1,12 @@
 {% extends 'perfiles/base.html' %}
+{% load static %}
 {% block content %}
 
 
- <h1  style="text-align:center"> Bienvenido a ....</h1>
- <h2 style="text-align:center">Para iniciar sesion apreta <a href="{% url 'login' %}">aqui</a></h2>
- <h2 style="text-align:center">Para registrese apreta <a href="{% url 'register' %}">aqui</a></h2>
+ <h1  style="text-align:center"> Bienvenido a <img src=" {% static 'imagenes/logon.png' %} " class="logo"/></h1>
+ <br><br>
+ <h2 style="text-align:center">Para iniciar sesión aprete <a href="{% url 'login' %}">aquí</a></h2>
+ <h2 style="text-align:center">Para registrarse aprete <a href="{% url 'register' %}">aquí</a></h2>
 
 
 
