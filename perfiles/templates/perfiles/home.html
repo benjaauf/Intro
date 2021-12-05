@@ -1,4 +1,5 @@
 {% extends 'perfiles/base.html' %}
+{% load static %}
 {% block content %}
 
 
@@ -20,4 +21,16 @@
 <p><a href="{% url 'avatar' %}">Personalizar avatar</a></p>
 <p><a href="{% url 'login' %}">Cambiar usuario</a></p>
 <p><a href="{% url 'logout' %}">Salir</a></p>
+
+<img src="{% static 'imagenes/avatar.png' %}" alt="avatar"class="heaven"/> 
+<td>
+    <img src=" {{ accesorios.imagen.url }} " class="eye"/>
+</td>
+<td>
+    <img src="{{caras.imagen.url}}" class="eye"/>
+</td>
+<td>
+    <img src="{{vestuario.imagen.url}}" class="eye"/>
+</td>
+
 {% endblock %}
