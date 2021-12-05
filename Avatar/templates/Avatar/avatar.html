@@ -11,6 +11,7 @@
 <body>
     
     <h1>Editar avatar</h1>
+    <a href="{% url 'home' %}">Volver al inicio</a>
     <img src="{% static 'imagenes/avatar.png' %}" alt="avatar"class="heaven"/> 
     <td>
         <img src=" {{ accesorios.imagen.url }} " class="eye"/>
@@ -29,6 +30,5 @@
     <br>
     <h3><a href="{% url 'izqves' %}"><</a> Ropa <a href="{% url 'derves' %}">></a></h3>
     
-
 </body>
 </html>
