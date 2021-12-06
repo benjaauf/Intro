@@ -7,9 +7,9 @@ from .calendario import crear_calendario
 
 from Avatar.models import Accesorios,Caras,Vestuario,contador
 
-conacc = [18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34]
-concar = [ 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17]
-conver = [ 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17]
+conacc = [35,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34]
+concar = [18, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17]
+conver = [18, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17]
 
 # Create your views here.
 
