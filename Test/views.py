@@ -19,17 +19,26 @@ def descanso(request):
 
 
 def test(request):
+    DAYS = {
+        0:'Lunes',
+        1:'Martes',
+        2:'Miercoles',
+        3:'Jueves',
+        4:'Viernes',
+        5:'Sabado',
+        6:'Domingo'
+    }
     user = request.user
     ramos = Ramo.objects.all().filter(user=user).order_by('id')
     if request.method == 'POST':
         form = Ingresar_ramo(request.POST,instance=Ramo(user=user))
-        lunes = LunesForm(request.POST, instance= Horario(day = 'Lunes',user=user))
-        martes = MartesForm(request.POST,instance= Horario(day = 'Martes',user=user))
-        miercoles = MiercolesForm(request.POST,instance= Horario(day = 'Miercoles',user=user))
-        jueves = JuevesForm(request.POST,instance= Horario(day = 'Jueves',user=user))
-        viernes = ViernesForm(request.POST,instance= Horario(day = 'Viernes',user=user))
-        sabado = SabadoForm(request.POST,instance= Horario(day = 'Sabado',user=user))
-        domingo = DomingoForm(request.POST,instance= Horario(day = 'Domingo',user=user))
+        lunes = LunesForm(request.POST, instance= Horario(day = DAYS[0],user=user))
+        martes = MartesForm(request.POST,instance= Horario(day = DAYS[1],user=user))
+        miercoles = MiercolesForm(request.POST,instance= Horario(day = DAYS[2],user=user))
+        jueves = JuevesForm(request.POST,instance= Horario(day = DAYS[3],user=user))
+        viernes = ViernesForm(request.POST,instance= Horario(day = DAYS[4],user=user))
+        sabado = SabadoForm(request.POST,instance= Horario(day = DAYS[5],user=user))
+        domingo = DomingoForm(request.POST,instance= Horario(day = DAYS[6],user=user))
         if form.is_valid():
             form.save()
             return redirect('test')

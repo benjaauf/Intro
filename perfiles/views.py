@@ -3,7 +3,8 @@ from django.shortcuts import redirect, render
 from django.contrib.auth import  authenticate,login
 from .forms import UserRegisterForm
 from Test.models import *
-from .calendario import crear_calendario
+from .calendario import crear_calendario, crear_estudio
+from django.contrib import messages
 
 from Avatar.models import Accesorios,Caras,Vestuario,contador
 
@@ -46,4 +47,13 @@ def register(request):
    return render(request, 'perfiles/register.html', context)
 
 def inicio(request):
+   # hacer que cuando se vaya inicio se deslogue automaticamente
    return render(request, 'perfiles/inicio.html')
+
+
+def hora_estudio(request):
+   user = request.user
+   horarios = Horario.objects.filter(user = user)
+   eventos = crear_estudio(horarios)
+   messages.success(request,'El horario ha sido creado en Google Calendar')
+   return redirect('home')

@@ -86,6 +86,7 @@
                 </div>
             {% endfor%}
         </div>
+        <div class="text-center mt-4"><p class="lead"> <a class="btn btn-xl btn-outline-dark" href="{% url 'estudio' %}">Importar datos a Google calendar</a></p></div>
     </div>
 </section>
 
@@ -155,6 +156,7 @@
     <li>{{dia.day}}: <strong>8:15-9:25</strong>: {{dia.b1}} <strong>9:35-10:45</strong> : {{dia.b2}} <strong> 10:55-12:05 </strong>: {{dia.b3}} <strong>12:15-13:25</strong> : {{dia.b4}} <strong> 14:30-15:40</strong>: {{dia.b5}} <strong>15:50-17:00</strong> : {{dia.b6}} <strong>17:10-18:20</strong> : {{dia.b7}} <strong> 18:30-19:40</strong>: {{dia.b8}} <strong> 19:50-21:00</strong>: {{dia.b9}} <strong> 21:10-22:20</strong>: {{dia.b10}}</li>
     {% endfor%}
 </ul>
+<p><a href="{% url 'estudio' %}">Importar datos a Google calendar</a></p>
 <p><a href="{% url 'updatet1' %}">Cambiar Test 1</a></p>
 <p><a href="{% url 'Test2' %}">Hacer Test 2</a></p>
 <p><a href="{% url 'avatar' %}">Personalizar avatar</a></p>
