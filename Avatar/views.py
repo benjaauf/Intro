@@ -2,8 +2,8 @@ from django.shortcuts import redirect, render
 from .models import *
 
 conacc = [18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34]
-concar = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
-conver = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+concar = [ 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17]
+conver = [ 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14]
 
 def deracc(request):
     accesorio = contador.objects.get(name='acceso')
