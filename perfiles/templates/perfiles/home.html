@@ -71,7 +71,7 @@
         <!-- Portfolio Grid Items-->
         <div class="row justify-content-center">
             {% for dia in horario%}
-                <div class="col-md-6 col-lg-4 mb-5">
+                <div class="col-md-6 col-lg-4 mb-5 text-center">
                     {{dia.day}}: <br><br>
                     <strong>8:15-9:25</strong>: {{dia.b1}} <br>
                     <strong>9:35-10:45</strong> : {{dia.b2}} <br>
@@ -86,7 +86,10 @@
                 </div>
             {% endfor%}
         </div>
-        <div class="text-center mt-4"><p class="lead"> <a class="btn btn-xl btn-outline-dark" href="{% url 'estudio' %}">Importar datos a Google calendar</a></p></div>
+        <div class="text-center mt-4">
+        <div ><p class="lead"> <a class="btn btn-xl btn-outline-dark" href="{% url 'estudio' %}">Importar datos a Google calendar</a></p></div>
+        <div ><p class="lead"> <a class="btn btn-xl btn-outline-dark" href="https://calendar.google.com" target="_blank" >Ir a Google calendar</a></p></div>
+        </div>
     </div>
 </section>
 
