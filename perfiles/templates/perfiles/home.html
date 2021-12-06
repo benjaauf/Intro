@@ -22,10 +22,11 @@
 <!-- Masthead-->
 <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
-        <img src="{% static 'imagenes/avatar.png' %}" alt="avatar"class="masthead-avatar mb-5"/> 
-        <img src=" {{ accesorios.imagen.url }} " class="masthead-avatar mb-5"/>
+        <img src="{% static 'imagenes/avatar.png' %}" alt="avatar"class="masthead-avatar mb-5"/>
+        <img src="{{vestuario.imagen.url}}" class="masthead-avatar mb-5"/> 
         <img src="{{caras.imagen.url}}" class="masthead-avatar mb-5"/>
-        <img src="{{vestuario.imagen.url}}" class="masthead-avatar mb-5"/>
+        <img src=" {{ accesorios.imagen.url }} " class="masthead-avatar mb-5"/>
+        
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
