@@ -3,7 +3,7 @@ from .models import *
 
 conacc = [18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34]
 concar = [ 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17]
-conver = [ 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14]
+conver = [ 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17]
 
 def deracc(request):
     accesorio = contador.objects.get(name='acceso')
@@ -27,7 +27,7 @@ def derves(request):
     ropa = contador.objects.get(name='vesto')
     ropa.valor = ropa.valor +1
     ropa.save()
-    if ropa.valor >= 14:
+    if ropa.valor >= 17:
         ropa.valor = 0
         ropa.save()
     return redirect('avatar')
@@ -55,7 +55,7 @@ def izqves(request):
     ropa.valor = ropa.valor -1
     ropa.save()
     if ropa.valor <= -1:
-        ropa.valor = 13
+        ropa.valor = 16
         ropa.save()
     return redirect('avatar')
 
