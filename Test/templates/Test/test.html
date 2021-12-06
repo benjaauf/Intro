@@ -24,7 +24,7 @@
         <ul>
             {% for ramo in ramos %}
             <li style="font-size: 30px;">
-                {{ramo.ramo}}<a class="btn btn-outline-light btn-social mx-1"  href="{% url 'deletet1' ramo.id %}">X</a> <br><br> 
+                {{ramo.ramo}}<a class="btn btn-outline-light btn-social mx-1"  href="{% url 'delete' ramo.id %}">X</a> <br><br> 
             </li>
             {% endfor %}
         </ul>
