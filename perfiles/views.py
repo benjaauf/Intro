@@ -19,12 +19,12 @@ def home(request):
    nivel=Nivel.objects.get(name='nivelon')
    exp = Exp.objects.get(name='experience')
    supera = Exp.objects.get(name='supera')
-   if exp.valor >= supera.valor:
+   while exp.valor >= supera.valor:
       nivel.numero = nivel.numero + 1
       nivel.save()
       supera.valor = supera.valor + 15
       supera.save()
-      exp.valor = 0
+      exp.valor = exp.valor - supera.valor
       exp.save()
    ac = conacc[contador.objects.get(name='acceso').valor]
    ca = concar[contador.objects.get(name='careta').valor]
@@ -97,4 +97,10 @@ def hora_estudio(request):
    horarios = Horario.objects.filter(user = user)
    eventos = crear_estudio(horarios)
    messages.success(request,'El horario ha sido creado en Google Calendar')
+   return redirect('home')
+
+def cumplido(request):
+   exp = Exp.objects.get(name='experience')
+   exp.valor = exp.valor + 5
+   exp.save()
    return redirect('home')
