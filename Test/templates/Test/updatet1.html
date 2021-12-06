@@ -1,35 +1,72 @@
 {% extends 'Test/base.html' %}
-
+{% load static %}
 {% block content%}
 
-<h1>Bienvenido al primer Test</h1>
+<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#page-top">Bienvenido al primer Test</a>
+        <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
 
-<h2>Agrega tus ramos</h2>
-<form method="post" class="post-form">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button>Ingresar</button>
+<section class="page-section bg-primary text-white mb-0" id="page-top">
+    <div class="container">
+        <h2>Agrega tus ramos</h2>
+        <br><br>
+        <form method="post" class="form-floating mb-3">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-dark">Ingresar</button>
+            <br><br><br><br>
+        <ul>
+            {% for ramo in ramos %}
+            <li style="font-size: 30px;">
+                {{ramo.ramo}}<a class="btn btn-outline-light btn-social mx-1"  href="{% url 'deletet1' ramo.id %}">X</a> <br><br> 
+            </li>
+            {% endfor %}
+        </ul>
+        </form>
+    </div>
 
-<ul>
-    {% for ramo in ramos %}
-    <li>{{ramo.ramo}}               <a href="{% url 'deletet1' ramo.id %}">X</a></li>
-    {% endfor %}
-</ul>
 
-</form>
-<form method="post"> 
-{% csrf_token %}
-<h2>En que horario estas libre</h2>
-<p>Selecciona en que bloques estas ocupado y en cuales estudiaras. </p>
-        <p><strong style="font-size:150%">Lunes: </strong> <strong> {{Lunes}}</strong></p>
-        <p><strong style="font-size:150%">Martes: </strong> <strong> {{Martes}}</strong></p>
-        <p><strong style="font-size:150%">Miercoles: </strong> <strong>{{Miercoles}}</strong></p>
-        <p><strong style="font-size:150%">Jueves: </strong> <strong> {{Jueves}} </strong></p>
-        <p><strong style="font-size:150%">Viernes: </strong> <strong> {{Viernes}} </strong></p>
-        <p><strong style="font-size:150%">Sabado: </strong>  <strong> {{Sabado}}</strong></p>
-        <p><strong style="font-size:150%">Domingo: </strong> <strong> {{Domingo}}</strong></p>
-    <button type="submit" >Enviar</button>
-</form>
+    <div class="container">
+        <form method="post"> 
+            {% csrf_token %}
+            <h2>En que horario estas libre</h2>
+            <p>Selecciona en que bloques estas ocupado y en cuales estudiaras.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <p><strong style="font-size:150%">Lunes:     </strong><br><strong> {{Lunes}}    <br></strong><br></p><br>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <p><strong style="font-size:150%">Martes:    </strong><br><strong> {{Martes}}   <br></strong><br></p><br>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <p><strong style="font-size:150%">Miercoles: </strong><br><strong> {{Miercoles}}<br></strong><br></p><br>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <p><strong style="font-size:150%">Jueves:    </strong><br><strong> {{Jueves}}   <br></strong><br></p><br>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <p><strong style="font-size:150%">Viernes:   </strong><br><strong> {{Viernes}}  <br></strong><br></p><br>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <p><strong style="font-size:150%">Sabado:    </strong><br><strong> {{Sabado}}   <br></strong><br></p><br>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <p><strong style="font-size:150%">Domingo:   </strong><br><strong> {{Domingo}}  <br></strong><br></p><br>
+                </div>
+            </div>
+                <button class="btn-xl btn-dark" type="submit" >Enviar</button>
+            </form>
+    </div>
+</section>
+
+
+
 
 
 
