@@ -9,7 +9,7 @@ def deracc(request):
     accesorio = contador.objects.get(name='acceso')
     accesorio.valor = accesorio.valor +1
     accesorio.save()
-    if accesorio.valor >= 18:
+    if accesorio.valor >= len(conacc):
         accesorio.valor = 0
         accesorio.save()
     return redirect('avatar')
@@ -18,7 +18,7 @@ def dercar(request):
     cara = contador.objects.get(name='careta')
     cara.valor = cara.valor +1
     cara.save()
-    if cara.valor >= 18:
+    if cara.valor >= len(concar):
         cara.valor = 0
         cara.save()
     return redirect('avatar')
@@ -27,7 +27,7 @@ def derves(request):
     ropa = contador.objects.get(name='vesto')
     ropa.valor = ropa.valor +1
     ropa.save()
-    if ropa.valor >= 18:
+    if ropa.valor >= len(conver):
         ropa.valor = 0
         ropa.save()
     return redirect('avatar')
@@ -37,7 +37,7 @@ def izqacc(request):
     accesorio.valor = accesorio.valor -1
     accesorio.save()
     if accesorio.valor <= -1:
-        accesorio.valor = 17
+        accesorio.valor = (len(conacc)-1)
         accesorio.save()
     return redirect('avatar')
 
@@ -46,7 +46,7 @@ def izqcar(request):
     cara.valor = cara.valor -1
     cara.save()
     if cara.valor <= -1:
-        cara.valor = 17
+        cara.valor = (len(concar)-1)
         cara.save()
     return redirect('avatar')
 
@@ -55,7 +55,7 @@ def izqves(request):
     ropa.valor = ropa.valor -1
     ropa.save()
     if ropa.valor <= -1:
-        ropa.valor = 17
+        ropa.valor = (len(conver)-1)
         ropa.save()
     return redirect('avatar')
 
