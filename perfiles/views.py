@@ -22,10 +22,10 @@ def home(request):
    while exp.valor >= supera.valor:
       nivel.numero = nivel.numero + 1
       nivel.save()
-      supera.valor = supera.valor + 15
-      supera.save()
       exp.valor = exp.valor - supera.valor
       exp.save()
+      supera.valor = supera.valor + 15
+      supera.save()
    ac = conacc[contador.objects.get(name='acceso').valor]
    ca = concar[contador.objects.get(name='careta').valor]
    ve = conver[contador.objects.get(name='vesto').valor]
@@ -101,6 +101,6 @@ def hora_estudio(request):
 
 def cumplido(request):
    exp = Exp.objects.get(name='experience')
-   exp.valor = exp.valor + 5
+   exp.valor = exp.valor + 10
    exp.save()
    return redirect('home')
