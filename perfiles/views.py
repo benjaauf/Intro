@@ -1,14 +1,10 @@
-from os import name
-from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import  authenticate,login
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, CertamenForm
 from Test.models import *
-from .calendario import crear_calendario, crear_estudio
-from django.contrib import messages
+from .calendario import crear_calendario, crear_estudio, crear_certamen
 from .models import *
 from Avatar.models import Accesorios,Caras,Vestuario,contador
-
 conacc = [35,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,36]
 concar = [18, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,19]
 conver = [18, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,19]
@@ -95,12 +91,31 @@ def inicio(request):
 def hora_estudio(request):
    user = request.user
    horarios = Horario.objects.filter(user = user)
-   eventos = crear_estudio(horarios)
-   messages.success(request,'El horario ha sido creado en Google Calendar')
+   materias = Ramo.objects.filter(user=user).order_by('dificultad')
+   eventos = crear_estudio(horarios,materias)
    return redirect('home')
 
 def cumplido(request):
    exp = Exp.objects.get(name='experience')
    exp.valor = exp.valor + 10
    exp.save()
+   return redirect('home')
+
+def certamen(request):
+   user = request.user
+   choices = Ramo.objects.filter(user=user)
+   if request.method == 'POST':
+      form = CertamenForm(request.POST, instance=Certamen(user=user))
+      if form.is_valid():
+         form.save()
+         return redirect('hora_certamen')
+   else:
+      form = CertamenForm(instance=Certamen(user=user))
+   context = {'form':form}
+   return render(request,'perfiles/certamen.html',context)
+
+def hora_certamen(request):
+   user = request.user
+   certamenes = Certamen.objects.filter(user = user)
+   eventos = crear_certamen(certamenes)
    return redirect('home')

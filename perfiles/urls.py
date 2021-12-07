@@ -10,4 +10,6 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='perfiles/inicio.html'), name='logout'),
     path('estudio/', views.hora_estudio, name='estudio'),
     path('cumplido/',views.cumplido, name='cumplido'),
+    path('certamen/', views.certamen, name = 'certamen'),
+    path('hora_certamen/', views.hora_certamen, name= 'hora_certamen')
     ]

@@ -95,7 +95,7 @@ def updatet1(request):
             viernes.save() 
             sabado.save() 
             domingo.save() 
-            return redirect('home')
+            return redirect('/Test2')
     else:
         form = Ingresar_ramo()
         lunes = LunesForm(instance=lun)

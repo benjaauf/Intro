@@ -57,7 +57,7 @@
             {% for ramo in ramos%}
             <li>
                 {{ramo.ramo}}  <br>
-                Dificultad: {{ramo.dificultad}}
+                Dificultad: {{ramo.get_dificultad_display}}
             </li>
             {% endfor %}
         </div>
@@ -93,6 +93,7 @@
         </div>
         <div class="text-center mt-4">
         <div ><p class="lead"> <a class="btn btn-xl btn-outline-dark" href="{% url 'estudio' %}">Importar datos a Google calendar</a></p></div>
+        <div ><p class="lead"> <a class="btn btn-xl btn-outline-dark" href="{% url 'certamen' %}">Agregar certamen</a></p></div>
         <div ><p class="lead"> <a class="btn btn-xl btn-outline-dark" href="https://calendar.google.com" target="_blank" >Ir a Google calendar</a></p></div>
         </div>
     </div>
