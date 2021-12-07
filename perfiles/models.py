@@ -32,7 +32,7 @@ class Certamen(models.Model):
         ('b10','21:10-22:20')
     ]
     user=models.ForeignKey(User, on_delete=models.CASCADE)
-    ramo = models.ForeignKey(Ramo, on_delete=models.CASCADE) 
+    ramo = models.ForeignKey(Ramo, on_delete=models.CASCADE, limit_choices_to={'user_id':'1'}) 
     """ usar limitchoices """
     fecha = models.DateField(default=date.today())
     hora = models.CharField(choices=HORAS, max_length=20, default='b1')
