@@ -8,9 +8,10 @@ API_NAME = 'calendar'
 API_VERSION = 'v3'
 SCOPES = ['https://www.googleapis.com/auth/calendar','https://www.googleapis.com/auth/calendar.events']
 
-service = Create_Service(CLIENT_SECRET_FILE, API_NAME,API_VERSION, SCOPES)
+
 
 def crear_calendario():
+    service = Create_Service(CLIENT_SECRET_FILE, API_NAME,API_VERSION, SCOPES)
     calendar = {
     'summary': 'Prueba',
     'timeZone': 'America/Santiago',
@@ -24,6 +25,7 @@ class TZ(tzinfo):
         return timedelta(hours=-3)
 
 def crear_estudio(horarios,materias):
+    service = Create_Service(CLIENT_SECRET_FILE, API_NAME,API_VERSION, SCOPES)
     # 
     # Encontrar calendario 
     HORAS = {
@@ -71,10 +73,7 @@ def crear_estudio(horarios,materias):
             if DAYS[i] == dia_pedido:
                 dia_pedido = i
                 break
-        if dia_actual > dia_pedido:
-            td = timedelta(days=dia_pedido+1)
-        else:
-            td = timedelta(days=dia_pedido-dia_actual)
+        td = timedelta(days=dia_pedido-dia_actual)
         dia_evento = date.today() + td
         bloques ={}
         bloques['b1'] = horario.b1
@@ -159,6 +158,7 @@ def crear_estudio(horarios,materias):
     return 0
 
 def crear_certamen(certamenes):
+    service = Create_Service(CLIENT_SECRET_FILE, API_NAME,API_VERSION, SCOPES)
     HORAS = {
         'b1': ('8:15','9:25'),
         'b2': ('9:35','10:45'),
