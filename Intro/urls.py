@@ -24,7 +24,7 @@ urlpatterns = [
     path('test/', include('Test.urls')),
     path('test2/', include('Test2.urls')),
     path('avatar/',include('Avatar.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] 
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
